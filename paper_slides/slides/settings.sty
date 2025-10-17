@@ -1,0 +1,37 @@
+\ProvidesPackage{settings}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+\usepackage{graphicx} % Add this package for images
+\usepackage{booktabs} % For professional tables
+\usepackage{adjustbox}
+\usepackage{subcaption} % For \subcaptionbox
+
+% Set color theme to black and white
+\usecolortheme[named=black]{structure}
+
+% Set font theme to make titles bold
+\setbeamerfont{title}{series=\bfseries}
+\setbeamerfont{frametitle}{series=\bfseries}
+\setbeamerfont{section in toc}{series=\bfseries}
+\setbeamerfont{subtitle}{series=\bfseries}
+\setbeamerfont{headline}{series=\bfseries}
+\setbeamerfont{footline}{series=\bfseries}
+
+% Optional: Remove navigation symbols (which often appear in color)
+\setbeamertemplate{navigation symbols}{}
+
+% Optional: Use a simple layout
+\useinnertheme{default}
+\useoutertheme{default}
+
+\usepackage[most]{tcolorbox}
+\newtcolorbox{importantbox}{
+  colback=black!5,        % light gray background
+  colframe=black!70,      % dark gray frame
+  colbacktitle=black!12,  % light gray title background
+  coltitle=black,         % black title text
+  title=Empirical Strategy, fonttitle=\bfseries,
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  boxrule=0.8pt, arc=2mm
+}

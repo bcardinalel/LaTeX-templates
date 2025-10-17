@@ -1,0 +1,82 @@
+\ProvidesPackage{settings}
+
+% --- Encoding & fonts ---------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% --- Spacing & layout ---------------------------------------------------------
+\usepackage[nodisplayskipstretch]{setspace}
+\usepackage{indentfirst}
+\usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+
+% --- Math ---------------------------------------------------------------------
+\usepackage{amsmath,amssymb,amsfonts}
+
+% --- Colors (OliveGreen needed) -----------------------------------------------
+\RequirePackage[dvipsnames,table]{xcolor}
+
+% --- Graphics, floats, boxes --------------------------------------------------
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{adjustbox}
+
+% --- Hyperlinks & references --------------------------------------------------
+\usepackage[hidelinks,bookmarks=true]{hyperref}
+\usepackage[nameinlink]{cleveref}
+\usepackage{footnotebackref}
+
+\hypersetup{
+  colorlinks,
+  linkcolor={black!80!black},
+  citecolor={black!80!black},
+  urlcolor={blue!80!blue},
+  pdfstartview={}
+}
+
+% --- Bibliography & quotes ----------------------------------------------------
+\usepackage[round,authoryear]{natbib}
+\usepackage{csquotes}
+
+% --- Tables & lists -----------------------------------------------------------
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{threeparttable}
+\usepackage{array}
+\usepackage{makecell}
+\usepackage{rotating}
+\usepackage{tocloft}          % optional: nicer ToC
+\usepackage{enumitem}         % list spacing/leftmargin controls
+
+% --- Figures & captions -------------------------------------------------------
+\usepackage[labelfont=bf,format=plain,labelsep=period]{caption}
+\usepackage{subcaption}
+\captionsetup[sub]{labelformat=simple,labelsep=period,size=footnotesize}
+\captionsetup[table]{position=top}
+\renewcommand{\thesubfigure}{\Alph{subfigure}}
+
+% --- Page & float tuning ------------------------------------------------------
+\usepackage[bottom]{footmisc}
+\usepackage{etoolbox}
+\usepackage[title]{appendix}
+\usepackage{epstopdf}
+\renewcommand{\floatpagefraction}{0}
+\renewcommand{\arraystretch}{1.1}
+\renewcommand{\figurename}{\textsc{Figure}}
+\renewcommand{\tablename}{\textsc{Table}}
+\BeforeBeginEnvironment{tabular*}{\footnotesize}
+\AtBeginDocument{\allowdisplaybreaks[1]}
+\makeatletter\g@addto@macro\@floatboxreset\centering\makeatother
+
+% --- Notes below tables & figures --------------------------------------------
+\newcommand{\note}[2][]{\parbox{\textwidth}{\footnotesize\vspace*{10pt}\textit{#1}#2}}
+\newcommand{\fspace}{\\\vspace*{4mm}}
+
+% --- TikZ (for defense flow/structure figures) --------------------------------
+\usepackage{tikz}
+\usetikzlibrary{
+  shapes.geometric,
+  positioning,
+  matrix,        % needed for matrix-of-nodes layout
+  arrows.meta    % needed for -Latex thick arrows in your figure
+}
